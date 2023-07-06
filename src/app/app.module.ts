@@ -13,6 +13,12 @@ import { ProductsComponent } from './products/products.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { CheckOutComponent } from './check-out/check-out.component';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from './services/auth-guard.service';
+import { LoginComponent } from './login/login.component';
+import { MyOrdersComponent } from './my-orders/my-orders.component';
+import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
+import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +27,11 @@ import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
     HomeComponent,
     ProductsComponent,
     ShoppingCartComponent,
-    CheckOutComponent
+    CheckOutComponent,
+    LoginComponent,
+    MyOrdersComponent,
+    AdminOrdersComponent,
+    AdminProductsComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +43,10 @@ import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 
 
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
